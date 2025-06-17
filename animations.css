@@ -1,0 +1,44 @@
+/* Extra Animations & Enhanced Visuals */
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+body {
+  background: linear-gradient(130deg, #6C63FF, #7E70FF, #FF9DFF);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Correct pulse */
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
+}
+.option.correct {
+  animation: pulse 0.4s ease;
+}
+
+/* Incorrect shake */
+@keyframes shake {
+  0%,100% {transform: translateX(0);}
+  25% {transform: translateX(-5px);}
+  50% {transform: translateX(5px);}
+  75% {transform: translateX(-5px);}
+}
+.option.incorrect {
+  animation: shake 0.4s ease;
+}
+
+/* Fade-in for new question */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.fade-in {
+  animation: fadeInUp 0.5s ease;
+}

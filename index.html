@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина по Программированию</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="icon" type="image/svg+xml" href="quiz-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="mode-overlay">
+        <div class="mode-container glass-card">
+            <h1>Выберите режим игры</h1>
+            <div class="modes-wrapper">
+                <button class="mode-btn" onclick="setMode('classic')">Классический</button>
+                <button class="mode-btn" onclick="setMode('blitz')">Блиц</button>
+                <button class="mode-btn" onclick="setMode('survival')">Выживание</button>
+                <button class="mode-btn" onclick="setMode('duo')">Дуэль (2 игрока)</button>
+                <button class="mode-btn" onclick="setMode('study')">Учебный</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Викторина по Программированию</h1>
+            <div class="stats">
+                <div class="stat-item glass-card"><span>Прогресс</span><div id="progress-text">0/0</div><div class="progress-bar"><div id="progress" style="width: 0%"></div></div></div>
+                <div class="stat-item glass-card"><span>Счёт</span><div id="score">0</div></div>
+                <div id="lives" class="stat-item glass-card"><span>Жизни</span><div id="lives-count">3</div></div>
+                <div id="duo-scores" class="stat-duo glass-card"><div class="duo-score"><span>Игрок 1</span><div id="p1-score">0</div></div><div class="duo-score"><span>Игрок 2</span><div id="p2-score">0</div></div></div>
+            </div>
+        </header>
+        <div class="timer glass-card" id="timer"><div class="timer-inner"><div id="timer-fill" style="width: 100%"></div></div><span id="timer-text">10</span></div>
+        <main>
+            <h2 id="question">?</h2>
+            <div id="options" class="options"></div>
+            <div id="explanation" class="explanation"></div>
+            <div class="controls"><button id="next">Дальше</button><button id="reset">🔄 Начать заново</button></div>
+            <div id="turn-indicator">Ход игрока 1</div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

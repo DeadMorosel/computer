@@ -57,6 +57,11 @@ function clearTimer() {
 }
 
 function startTimer() {
+    const timerEl = document.getElementById('timer');
+    if (!timerEl || getComputedStyle(timerEl).display === 'none') {
+        // таймер скрыт — не запускать отсчёт
+        return;
+    }
     clearTimer();
     remainingTime = timerDuration;
     updateTimerView();
